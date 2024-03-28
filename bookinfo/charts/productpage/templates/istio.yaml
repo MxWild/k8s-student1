@@ -1,0 +1,4 @@
+{{- if .Values.istio.enabled }}
+---
+
+{{- end }}

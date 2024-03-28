@@ -1,0 +1,20 @@
+apiVersion: v2
+name: bookinfo
+description: A Helm chart for Kubernetes
+type: application
+version: 0.1.0
+appVersion: "1.18.0"
+
+dependencies:
+  - name: productpage
+    version: 0.1.0
+    condition: productpage.enabled
+  - name: reviews
+    version: 0.1.0
+    condition: reviews.enabled
+  - name: details
+    version: 0.1.0
+    condition: details.enabled
+  - name: ratings
+    version: 0.1.0
+    condition: details.enabled

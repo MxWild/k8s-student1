@@ -1,0 +1,104 @@
+spec:
+  - image:
+      name: reviews-v1
+      labels:
+        helm.sh/chart: reviews-0.1.0
+        app.kubernetes.io/name: reviews
+        app.kubernetes.io/instance: bookinfo
+        app.kubernetes.io/version: "1.18.0"
+        app.kubernetes.io/managed-by: Helm
+      selector:
+        matchLabels:
+          app.kubernetes.io/name: reviews
+          app.kubernetes.io/instance: bookinfo
+      repository: docker.io/istio/examples-bookinfo-reviews-v1
+      pullPolicy: Always
+      replicaCount: 1
+      tag: "1.18.0"
+      imagePullSecrets: []
+      resources:
+        limits:
+          cpu: 100m
+          memory: 128Mi
+        requests:
+          cpu: 100m
+          memory: 128Mi
+      service:
+        type: ClusterIP
+        port: 9080
+        selector:
+          app.kubernetes.io/name: reviews
+          app.kubernetes.io/instance: bookinfo
+  - image:
+      name: reviews-v2
+      labels:
+        helm.sh/chart: reviews-0.1.0
+        app.kubernetes.io/name: reviews
+        app.kubernetes.io/instance: bookinfo
+        app.kubernetes.io/version: "1.18.0"
+        app.kubernetes.io/managed-by: Helm
+      selector:
+        matchLabels:
+          app.kubernetes.io/name: reviews
+          app.kubernetes.io/instance: bookinfo
+      repository: docker.io/istio/examples-bookinfo-reviews-v2
+      pullPolicy: Always
+      replicaCount: 1
+      tag: "1.18.0"
+      imagePullSecrets: []
+      resources:
+        limits:
+          cpu: 100m
+          memory: 128Mi
+        requests:
+          cpu: 100m
+          memory: 128Mi
+      service:
+        type: ClusterIP
+        port: 9080
+        selector:
+          app.kubernetes.io/name: reviews
+          app.kubernetes.io/instance: bookinfo
+  - image:
+      name: reviews-v3
+      labels:
+        helm.sh/chart: reviews-0.1.0
+        app.kubernetes.io/name: reviews
+        app.kubernetes.io/instance: bookinfo
+        app.kubernetes.io/version: "1.18.0"
+        app.kubernetes.io/managed-by: Helm
+      selector:
+        matchLabels:
+          app.kubernetes.io/name: reviews
+          app.kubernetes.io/instance: bookinfo
+      repository: docker.io/istio/examples-bookinfo-reviews-v3
+      pullPolicy: Always
+      replicaCount: 1
+      tag: "1.18.0"
+      imagePullSecrets: []
+      resources:
+        limits:
+          cpu: 100m
+          memory: 128Mi
+        requests:
+          cpu: 100m
+          memory: 128Mi
+      service:
+        type: ClusterIP
+        port: 9080
+        selector:
+          app.kubernetes.io/name: reviews
+          app.kubernetes.io/instance: bookinfo
+
+service:
+  type: ClusterIP
+  port: 9080
+
+nameOverride: ""
+fullnameOverride: ""
+
+podAnnotations: {}
+
+tolerations: []
+
+affinity: {}

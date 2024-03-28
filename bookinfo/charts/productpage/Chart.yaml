@@ -1,0 +1,6 @@
+apiVersion: v2
+name: productpage
+description: A Helm chart for examples-bookinfo-productpage-v1
+type: application
+version: 0.1.0
+appVersion: "1.18.0"
